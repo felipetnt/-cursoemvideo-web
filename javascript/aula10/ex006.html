@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+
+    <style>
+
+        /* 
+    EVENTOS DOM
+
+    MOUSEENTER: Disparado quando o mouse entra na área de um elemento.
+    MOUSEMOVE: Disparado quando o mouse se move dentro da área de um elemento.
+    MOUSEDOWN: Disparado quando um botão do mouse é pressionado sobre um elemento.
+    MOUSEUP: Disparado quando um botão do mouse é liberado sobre um elemento.
+    CLICK: Disparado quando um elemento é clicado (pressionado e liberado).    
+    MOUSEOUT: Disparado quando o mouse sai da área de um elemento.
+    
+    
+    */
+
+        body{
+            background-color: rgb(56, 1, 1);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #area{
+            width: 300px;
+            height: 200px;
+            background-color: rgb(255, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja...
+    </div>
+
+    <script>
+        var a = document.getElementById("area");
+        addEventListener("click", clicar);
+        addEventListener("mouseenter", entrar); 
+        addEventListener("mouseout", sair);
+
+
+        function clicar(){
+            a.innerHTML = "Clicou!";
+        }
+
+        function entrar(){
+            a.innerHTML = "Entrou!";
+        }
+
+        function sair(){
+            a.innerHTML = "Saiu!";
+        }
+    </script>
+</body>
+</html>
